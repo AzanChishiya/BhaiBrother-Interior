@@ -126,28 +126,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     text-shadow: 0 0 8px rgba(201, 168, 76, 0.8);
     border-bottom: 1px solid #c9a84c;
 }
-  async function calculatePrice() {
-  // 1. Fetch the JSON "Brain" from your GitHub/Vercel
-  const response = await fetch('./data/estimator.json');
-  const data = await response.json();
-
-  // 2. Get the User's Input
-  const category = document.getElementById('category-select').value;
-  const units = document.getElementById('units-input').value;
-  const resultDisplay = document.getElementById('price-range');
-
-  if (units > 0) {
-    const item = data.categories[category];
-    const low = item.base_price * units;
-    const high = item.premium_price * units;
-
-    // 3. Show the result
-    resultDisplay.innerText = `Rs. ${low.toLocaleString()} - Rs. ${high.toLocaleString()}`;
-  } else {
-    alert("Please enter a valid number!");
-  }
-}
-
 /* NAV */
 nav{position:fixed;inset:0 0 auto;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:76px;background:rgba(10,10,10,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--gb);transition:background .3s,box-shadow .3s}
 nav.scrolled{background:rgba(5,4,3,.97);box-shadow:0 2px 30px rgba(0,0,0,.5)}
@@ -989,21 +967,6 @@ footer{background:var(--black);border-top:1px solid var(--gb);padding:56px 60px 
     </article>
 </div>
   </div>
-  <section id="estimator">
-  <h3>Get a Quick Estimate</h3>
-  <select id="category-select">
-    <option value="curtains">Curtains (Per Sq Ft)</option>
-    <option value="sofa_polishing">Sofa Polishing (Per Seat)</option>
-    <option value="false_ceiling">False Ceiling (Per Sq Ft)</option>
-  </select>
-  
-  <input type="number" id="units-input" placeholder="Enter amount (e.g. 100)">
-  <button onclick="calculatePrice()">Calculate</button>
-
-  <div id="result-box">
-    <p>Estimated Range: <span id="price-range">Rs. 0</span></p>
-  </div>
-</section>
 </section>
 
 <!-- FEATURE -->
