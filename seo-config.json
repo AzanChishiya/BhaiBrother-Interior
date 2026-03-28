@@ -533,6 +533,18 @@
   ]
 }
   ],
+{
+  "siteName": "Al-Abdaan Interior",
+  "description": "Premium Interior Design and Furniture in Karachi...",
+  "keywords": ["Interior Design Karachi", "Office Furniture Pakistan", "Al-Abdaan Interior"],
+  "technical_tags": {
+    "robots": "index, follow",
+    "author": "Azan Hussain",
+    "theme_color": "#1a1a1a",
+    "og_type": "website",
+    "og_locale": "en_PK"
+  }
+}
   "openGraph": {
     "type": "website",
     "locale": "en_PK",
